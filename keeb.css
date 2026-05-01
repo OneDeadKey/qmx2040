@@ -1,0 +1,205 @@
+/* color theme */
+:root {
+  color-scheme: light dark;
+}
+rect {
+  fill: #fff;
+  stroke: #999;
+}
+text {
+  fill: #444;
+  font: normal 11px sans-serif;
+  text-align: center;
+  text-anchor: middle;
+}
+.dualKey {
+  fill: #ddd;
+}
+#board use,
+#board path {
+  fill:   #7889a2;
+  stroke: #7889a280;
+  fill:   #78a289;
+  stroke: #78a28980;
+  fill:   rgba(130, 156, 175, 0.60);
+  stroke: rgba(130, 156, 175, 0.20);
+  stroke-width: 1.0px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+@media (prefers-color-scheme: dark) {
+  /* TODO */
+}
+
+.col1 rect,
+.col2 rect,
+.col3 rect,
+.col4 rect,
+.col5 rect,
+.col6 rect {
+  stroke-width: 0.6px !important;
+}
+
+
+/*****************************************************************************
+ * Keyboard Geometry
+******************************************************************************/
+
+/* XXX magic numbers */
+#left  .matrix { transform-origin: -8px 56px; }
+#right .matrix { transform-origin: 67px 56px; }
+.leftThumb  .thumb { transform-origin: -14px -62px; }
+.rightThumb .thumb { transform-origin:  74px -62px; }
+
+#left  .matrix { transform-origin:  0px   56px; }
+#left  .thumb  { transform-origin: -14px -62px; }
+#right .matrix { transform-origin:  70px  56px; }
+#right .thumb  { transform-origin:  74px -62px; }
+
+/* keyboard geometry (XXX magic numbers) */
+#right { transform: translate(970px, 0px); }
+
+/* XXX dirty WebKit fixes */
+@supports (-webkit-hyphens: none) {
+  .none  #right,
+  .ortho #right  { transform: translate(772px, 0px); }
+}
+
+.board {
+  fill:   rgba(130, 156, 175, 0.40);
+  stroke: rgba(130, 156, 175, 0.10);
+  stroke-width: 1px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  display: none;
+}
+.keycaps {
+  stroke: navy;
+  stroke-width: 0.5px;
+  stroke-dasharray: 1 2;
+  display: none !important;
+}
+.tap-pref {
+  stroke-width: 1.2px;
+}
+text.sticky {
+  transform: rotate(-90deg);
+}
+
+
+/*****************************************************************************
+ * Labels: text, symbols
+******************************************************************************/
+
+text {
+  font: normal 16px sans-serif;
+  text-align: center;
+  text-anchor: middle;
+}
+.specialKey text {
+  font-size: 14px;
+}
+text.pc {
+  font-size: 12px;
+}
+text.shortcut {
+  font-size: 10px;
+}
+
+/* symbols */
+use.level0,
+use.level2,
+use.layerSym,
+use.layerNav,
+use.layerVim {
+  stroke-width: 2.5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.tt .holdTap, .tt .borderMod,
+.ez .holdTap, .ez .borderMod { display: none; }
+
+
+/*****************************************************************************
+ * Color Theme
+******************************************************************************/
+
+:root {
+  color-scheme: light dark;
+  --board: rgba(130, 156, 175, 0.40);
+
+  --key-bg: #fff;
+  --key-fg: #666;
+  --key-label: #444;
+  --key-special: #ddd;
+
+  /* Symbol layer */
+  --layer-sym-fg: #4646ff;
+  --shift-sym-fg: #4f4fac;
+  --shift-sym-bg: #ceceff;
+
+  /* Navigation layer */
+  --layer-nav-fg: rgb(198, 106, 29);
+  --shift-nav-fg: #aa422b;
+  --shift-nav-bg: #ffd2ac;
+}
+
+@media (prefers-color-scheme: dark) { :root {
+  --key-bg: #333;
+  --key-fg: #333;
+  --key-label: #aaa;
+  --key-special: #555;
+
+  /* Symbol layer */
+  --layer-sym-fg: #99f;
+  --shift-sym-fg: #11a;
+  --shift-sym-bg: #66b;
+
+  /* Navigation layer */
+  --layer-nav-fg: #e94;
+  --shift-nav-fg: #832;
+  --shift-nav-bg: #a75;
+}}
+
+rect {
+  fill:   var(--key-bg);
+  stroke: var(--key-fg);
+  stroke-width: .5px;
+  /* opacity: 0.7; */
+}
+
+rect.specialKey,
+rect.colorSpc,
+.col6 rect { fill: var(--key-special); }
+text       { fill: var(--key-label); }
+use.level0,
+use.level2 { stroke: var(--key-label); }
+
+/* Modifier keys */
+rect.borderMod,
+use.layerMod { stroke: var(--key-label); }
+text.colorMod  { fill: var(--key-label); }
+rect.colorMod  { fill: var(--key-special); }
+
+/* Symbol layer */
+rect.borderSym,
+use.layerSym { stroke: var(--layer-sym-fg); }
+text.borderSym,
+text.layerSym  { fill: var(--layer-sym-fg); }
+text.colorSym  { fill: var(--shift-sym-fg); }
+rect.colorSym  { fill: var(--shift-sym-bg); }
+
+/* Navigation layers (NavNum, VimNav) */
+rect.borderNav,
+use.layerNav { stroke: var(--layer-nav-fg); }
+text.borderNav,
+text.layerNav  { fill: var(--layer-nav-fg); }
+text.colorNav  { fill: var(--shift-nav-fg); }
+rect.colorNav  { fill: var(--shift-nav-bg); }
+
+@media (prefers-color-scheme: dark) {
+  .specialKey text.layerSym  { fill: #00f; }
+  .specialKey use.layerSym { stroke: #00f; }
+}

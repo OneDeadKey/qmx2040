@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <style>
+    :root { color-scheme: light dark; }
+    path   { fill: #fff; }
+    circle { fill: #333; }
+    @media (prefers-color-scheme: dark) {
+      path   { fill: #333; }
+      circle { fill: #fff; }
+    }
+  </style>
+  <circle cx="200" cy="200" r="200" />
+  <path transform="scale(8) translate(0-1)"
+    d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"/>
+</svg>
