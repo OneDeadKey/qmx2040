@@ -1,0 +1,84 @@
+/**
+ * ╭───────────────────────────────────────────────────────────────╮
+ * │                         Color Palette                         │
+ * ╰───────────────────────────────────────────────────────────────╯
+**/
+
+:root {
+  color-scheme: light dark;
+
+  /* <h2|a|code> and specific emphasis */
+  --bg-accent:        #b884;
+  --fg-accent-border: #4493f8aa;
+  --fg-accent:        #4493f8;
+
+  /* <kbd> and special inline content */
+  --bg-key:           #8884;
+  --fg-key-border:    #888;
+
+  /* flavor menu */
+  --bg-menu-head: rgba(130, 156, 175, 0.4);
+  --bg-menu-cell: rgba(130, 156, 175, 0.2);
+}
+
+
+/**
+ * ╭───────────────────────────────────────────────────────────────╮
+ * │                          Main Layout                          │
+ * ╰───────────────────────────────────────────────────────────────╯
+**/
+
+:root {
+  --main-padding: 12px;
+  --list-indent: 1.5em;
+}
+
+html {
+  height: 100%;
+}
+body {
+  margin: 1em auto;
+  max-width: 64em;
+  width: 100%;
+  font-family: sans-serif;
+}
+header, footer {
+  text-align: center;
+}
+header, footer, section {
+  padding: 1em;
+}
+
+h1 {
+  margin-bottom: 0;
+}
+h1 + p {
+  margin-top: 0;
+  font-size: 1.2em;
+}
+
+h2 {
+  color: var(--fg-accent);
+  border-bottom: 1px inset var(--fg-accent-border);
+}
+
+form {
+  text-align: right;
+}
+svg {
+  width: 100%;
+}
+
+nav {
+  text-align: left;
+}
+
+a[href] {
+  color: var(--fg-accent);
+  text-decoration: none;
+}
+
+a[href]:hover {
+  text-decoration: underline;
+}
+

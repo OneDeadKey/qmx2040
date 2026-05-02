@@ -14,49 +14,14 @@
     <meta property="og:image:height" content="630">
     <meta property="og:description"  content="The Extremely Normal Keyboard. The natural evolution of the TypeMatrix 2020 and 2030 series.">
     <link type="image/svg+xml" rel="icon" href="favicon.svg" sizes="any">
-    <style type="text/css">
-      html {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      body {
-        margin: 1em auto;
-        max-width: 64em;
-        width: 100%;
-        font-family: sans-serif;
-      }
-      header {
-        text-align: center;
-      }
-      h1 {
-        margin-bottom: 0;
-      }
-      h1 + p {
-        margin-top: 0;
-        font-size: 1.2em;
-      }
-      form {
-        text-align: right;
-      }
-      svg {
-        width: 100%;
-      }
-      nav {
-        display: flex;
-      }
-      nav a {
-        flex: 1;
-        font-size: larger;
-        color: #4493f8;
-      }
-    </style>
+    <link type="text/css" rel="stylesheet" href="style.css">
     <link type="text/css" rel="stylesheet" href="keeb.css">
     <script type="text/javascript" defer src="keeb.js"></script>
   </head>
   <body>
+
     <header>
+      <nav><a href="https://onedeadkey.github.io">⮝ OneDeadKey</a></nav>
       <h1>QMx 2040</h1>
       <p>The Extremely Normal Keyboard.</p>
       <form>
@@ -756,6 +721,80 @@
 
       </svg>
     </header>
+
+    <section>
+      <h2 id="beyond-the-matrix">Beyond the Matrix</h2>
+      <p> We love unibody ortholinear keyboards for their comfort and ease of use. The matrix is a
+        simple yet effective geometry: the parallel columns don’t match the angle of the arms, but
+        along with the way fingers tend to spread, it’s a remakably close match. This immediate
+        efficiency is what we praise in keyboards like the TypeMatrix or the Preonic, and we wanted
+        to build our own keeb on this idea. </p>
+      <p> The main downside of ortholinear geometries is that outer columns tend to require harder
+        finger stretches than on staggered ANSI/ISO keyboards. To mitigate this, the QMX 2040 has a
+        half-unit vertical stagger on the outer columns: it helps significantly, while providing a
+        visual hint for quick hand placement. </p>
+      <p> To further reduce finger stretches, the QMx 2040 uses Choc switches, which have a slightly
+        smaller footprint than standard switches: 18×17 mm instead of 19.05×19.05 mm. Home columns
+        have a 1.05 mm padding to preserve the expected lateral spread, while numbers and outer keys
+        are closer to the home position. </p>
+    </section>
+
+    <section>
+      <h2 id="radial-thumb-clusters">Radial Thumb Clusters</h2>
+      <p></p>
+      <p> The <a href="https://onedeadkey.github.io/quacken">Quacken</a>’s thumb clusters are so
+        good, we cannot imagine making any keyboard without them. They’ve been adjusted to fit the
+        ortholinear layout, and provide 5 usable keys per thumb. </p>
+      <p> We have a strong opinion about modifier keys: for us, they <em>never</em> should be under
+        a pinky. Having <kbd>Shift</kbd> under a thumb might be confusing at first, but for most
+        users it’s the biggest improvement to expect when switching to an ergonomic keyboard. </p>
+    </section>
+
+    <section>
+      <h2 id="proudly-asymmetric">Proudly Asymmetric</h2>
+      <p> Most commercial ergonomic keyboards stick to a 4×6 geometry: 4 rows and 6 columns in a
+        symmetric layout. This is visually appealing, but some outer keys like <kbd>[{</kbd>
+        <kbd>}]</kbd> <kbd>!\</kbd> <kbd>-_</kbd> <kbd>+=</kbd> must then be moved to a dedicated
+        layer, which adds unwanted complexity — especially for non-US keyboard layouts, which might
+        have <em>letters</em> on those keys. </p>
+      <p> The QMx 2040 might be the first columnar keyboard with <strong>all alphanumeric keys in
+        direct access</strong> for ANSI <em>and ISO</em> layouts. No adaptation needed, your
+        keyboard layout immediately fits, thanks to the 4×7 grid under the right hand. </p>
+    </section>
+
+    <section>
+      <h2 id="navigation-layer">Navigation Layer</h2>
+      <p> No keyboard can be truly ergonomic if it ever requires to leave the touch-typing position.
+        So instead of having an arrow pad and dedicated function keys, the QMx has a single
+        navigation layer providing an easy access to these keys: </p>
+      <ul>
+        <li> the arrow pad is on the home position under the left hand; </li>
+        <li> the num pad is on the home position under the right hand; </li>
+        <li> function keys are on the number row. </li>
+      </ul>
+      <p> This is a core concept in modern ergonomic keyboards: rather than moving your hands
+        towards outer keys, use a layer to bring these keys under your hands. </p>
+    </section>
+
+    <section>
+      <h2 id="for-whom">For Whom?</h2>
+      <ul>
+        <li> For people buying their first ergonomic keyboard: the QMx is by far the easiest keeb in
+          its category, while still being truly ergonomic. </li>
+        <li> For users looking for a versatile keyboard: the matrix stays natural for gaming
+          (<kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>), and having all alphanumeric keys in
+          direct access makes multimedia apps easier. </li>
+        <li> For touch-typing beginners. No keyboard will ever be ergonomic without a proper
+          touch-typing, and the QMx makes it easy to learn. </li>
+      </ul>
+      <p> We believe the QMx 2040 is the easiest and most versatile ergonomic keybord out there; for
+        more advanced ergonomics, take a look at <a href="https://onedeadkey.github.io/quacken">the
+        Quacken</a>. </p>
+    </section>
+
+    <footer>
+      🄯 2026 <a href="https://github.com/OneDeadKey/qmx2040">OneDeadKey contributors</a>, GPL license.
+    </footer>
 
   </body>
 </html>
