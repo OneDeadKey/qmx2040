@@ -7,14 +7,20 @@ A natural evolution of the TypeMatrix 2020 and 2030 series.
 
 ## Project
 
-This is just the public web page of the project, which is mostly
-[Nuclear-Squid]’s work:
+The geometry is an attempt to have a modern matrix layout on an ISO-compatible keyboard.
+More info on the website: https://onedeadkey.github.io/qmx2040
 
-- [hardware] (KiCad and FreeCAD sources)
-- [ZMK firmware] implementing the [Selenium] keymap
+The conception is derived from [Nuclear-Squid]’s [Quacken]:
 
-[Selenium]:      https://onedeadkey.github.io/selenium
-[hardware]:      https://github.com/Nuclear-Squid/qmx2040
+- the electronic design is still ongoing, files will be published shortly
+- the [ZMK firmware] implements a dedicated keymap, derived from [Arsenik]
+
+If you want to build or submit a case for this keeb, here’s the FreeCAD source:
+
+- [QMx2040.FCStd](QMx2040.FCStd)
+
+[Arsenik]:       https://github.com/OneDeadKey/arsenik
+[Quacken]:       https://github.com/OneDeadKey/quacken
 [ZMK firmware]:  https://github.com/Nuclear-Squid/zmk-keyboard-qmx2040
 [Nuclear-Squid]: https://github.com/Nuclear-Squid
 
