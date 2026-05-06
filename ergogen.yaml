@@ -1,0 +1,155 @@
+units:
+  kw: cx
+  kh: cy
+  px: 2
+  py: 2
+
+points:
+  zones:
+
+    matrix:
+      anchor.shift: [100, -100]  # Fix placement en Kicad sheet
+      key:
+        padding: kh
+        spread:  cx
+        origin: [-0.5kw, -0.5kh]
+      columns:
+        bepo:
+          rows.bottom.skip: true
+          key.asym: clone
+        outer.rows.bottom.skip: true
+        pinky.key.stagger: 0.5kh
+        ring.key.spread:   U
+        middle.key.spread: U
+        index.key.spread:  U
+        inner:
+        tmx:
+          key.stagger: -0.5kh
+          rows.bottom.skip: true
+
+      rows:
+        bottom:
+        home:
+        top:
+        number:
+
+    thumb:
+      key:
+        padding: kh
+        spread:  kw
+        origin: [-0.5kw, -0.5kh]
+      anchor:
+        ref: matrix_ring_bottom
+        shift: [-0.19kw, -1kh]
+      columns:
+        trans_fem.key:
+        squeezed.key.spread: 1.05kw
+        tucky.key.splay: -15
+        comfy.key.splay: -15
+        reachy.key.splay: -15
+
+  mirror:
+    ref: matrix_tmx_top
+    distance: 1.2kw
+
+outlines:
+  keys:
+    - what: rectangle
+      where: true
+      size: [cx - 1, cy - 1]
+
+  pcb_reference_point:
+    - what: rectangle
+      where.ref.aggregate.parts: [ matrix_tmx_home, mirror_matrix_tmx_home, thumb_comfy, mirror_thumb_comfy ]
+      size: 5
+      adjust.rotate: 45
+
+  board:
+    - what: polygon
+      operation: stack
+      fillet: 3
+      points:
+        - ref: mirror_matrix_bepo_number
+          shift: [ -0.5kw - px,  kh + py ]
+        - ref: mirror_matrix_bepo_home
+          shift: [ -0.5kw - px, -2kh - py ]
+        - ref: mirror_thumb_tucky
+          shift: [ -0.5kw, -0.5kh - py ]
+        - ref: mirror_thumb_comfy
+          shift: [ -0.5kw, -0.5kh - py ]
+        - ref: mirror_thumb_reachy
+          shift: [ -0.5kw, -0.5kh - py ]
+        - ref: mirror_thumb_reachy
+          shift: [  0.5kw + px, -0.5kh - py ]
+
+        - aggregate.parts: [thumb_reachy, mirror_thumb_reachy]
+          shift: [0, 1.494]
+
+        - ref: thumb_reachy
+          shift: [  0.5kw + px, -0.5kh - py ]
+        - ref: thumb_reachy
+          shift: [ -0.5kw, -0.5kh - py ]
+        - ref: thumb_comfy
+          shift: [ -0.5kw, -0.5kh - py ]
+        - ref: thumb_tucky
+          shift: [ -0.5kw, -0.5kh - py ]
+        - ref: matrix_outer_home
+          shift: [ -0.5kw - px, -2kh - py ]
+        - ref: matrix_outer_number
+          shift: [ -0.5kw - px,  kh + py ]
+    - operation: stack
+      name: pcb_reference_point
+
+  combo:
+    - name: board
+    - operation: stack
+      name: keys
+    - operation: stack
+      name: pcb_reference_point
+
+# Pinout is defined in KiCad, using `GND` as a placeholder
+pcbs.qmx2040:
+  outlines.main.outline: board
+  footprints:
+
+    switches:
+      what: choc
+      where: true
+      adjust.rotate: 180
+      params:
+        hotswap: true
+        from: GND
+        to: "{{colrow}}"
+
+    dodes:
+      what: diode
+      where: true
+      adjust.shift: [ 0, 4.7 ]
+      adjust.rotate: 180
+      params:
+        from: "{{colrow}}"
+        to: GND
+
+    trrs_left:
+      what: trrs
+      where: matrix_tmx_home
+      adjust:
+        shift: [ 0.39kw, -0.875kh ]
+        rotate: -90
+      params:
+        A: GND
+        B: GND
+        C: GND
+        D: GND
+
+    trrs_right:
+      what: trrs
+      where: mirror_matrix_tmx_home
+      adjust:
+        shift: [ 0.39kw, -0.604kh ]
+        rotate: -90
+      params:
+        A: GND
+        B: GND
+        C: GND
+        D: GND
