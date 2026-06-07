@@ -65,8 +65,16 @@ h2 {
 form {
   text-align: right;
 }
+h2+form {
+  margin-top: -1em;
+}
 svg {
   width: 100%;
+}
+img {
+  display: block;
+  max-width: 100%;
+  margin: auto;
 }
 
 nav {
