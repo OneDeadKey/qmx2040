@@ -3,7 +3,7 @@
 The Extremely Normal Keyboard.
 A natural evolution of the TypeMatrix 2020 and 2030 series.
 
-![QMX 2040 Neo](qmx2040.jpg)
+![QMX 2040 Morpheus](docs/pics/qmx2040_punk_tuxedo.webp)
 
 ## Project
 
