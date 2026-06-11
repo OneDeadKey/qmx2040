@@ -1,46 +1,3 @@
-/* color theme */
-:root {
-  color-scheme: light dark;
-}
-rect {
-  fill: #fff;
-  stroke: #999;
-}
-text {
-  fill: #444;
-  font: normal 11px sans-serif;
-  text-align: center;
-  text-anchor: middle;
-}
-.dualKey {
-  fill: #ddd;
-}
-#board use,
-#board path {
-  fill:   #7889a2;
-  stroke: #7889a280;
-  fill:   #78a289;
-  stroke: #78a28980;
-  fill:   rgba(130, 156, 175, 0.60);
-  stroke: rgba(130, 156, 175, 0.20);
-  stroke-width: 1.0px;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-@media (prefers-color-scheme: dark) {
-  /* TODO */
-}
-
-.col1 rect,
-.col2 rect,
-.col3 rect,
-.col4 rect,
-.col5 rect,
-.col6 rect {
-  stroke-width: 0.6px !important;
-}
-
-
 /*****************************************************************************
  * Keyboard Geometry
 ******************************************************************************/
@@ -92,7 +49,8 @@ text.sticky {
 ******************************************************************************/
 
 text {
-  font: normal 16px sans-serif;
+  font: normal 18px sans-serif;
+  transform: translate(0px, 2px);
   text-align: center;
   text-anchor: middle;
 }
@@ -100,10 +58,10 @@ text {
   font-size: 14px;
 }
 text.pc {
-  font-size: 12px;
+  font-size: 14px;
 }
 text.shortcut {
-  font-size: 10px;
+  font-size: 12px;
 }
 
 /* symbols */
@@ -112,7 +70,7 @@ use.level2,
 use.layerSym,
 use.layerNav,
 use.layerVim {
-  stroke-width: 2.5px;
+  stroke-width: 3.5px;
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
@@ -127,79 +85,41 @@ use.layerVim {
 ******************************************************************************/
 
 :root {
-  color-scheme: light dark;
-  --board: rgba(130, 156, 175, 0.40);
-
   --key-bg: #fff;
   --key-fg: #666;
+  --key-nav: rgb(198, 106, 29);
   --key-label: #444;
-  --key-special: #ddd;
 
-  /* Symbol layer */
-  --layer-sym-fg: #4646ff;
-  --shift-sym-fg: #4f4fac;
-  --shift-sym-bg: #ceceff;
-
-  /* Navigation layer */
-  --layer-nav-fg: rgb(198, 106, 29);
-  --shift-nav-fg: #aa422b;
-  --shift-nav-bg: #ffd2ac;
+  --special-bg: #333;
+  --special-nav: rgb(243, 156, 84);
+  --special-label: #fff;
 }
 
-@media (prefers-color-scheme: dark) { :root {
-  --key-bg: #333;
-  --key-fg: #333;
-  --key-label: #aaa;
-  --key-special: #555;
-
-  /* Symbol layer */
-  --layer-sym-fg: #99f;
-  --shift-sym-fg: #11a;
-  --shift-sym-bg: #66b;
-
-  /* Navigation layer */
-  --layer-nav-fg: #e94;
-  --shift-nav-fg: #832;
-  --shift-nav-bg: #a75;
-}}
+#board use,
+#board path {
+  fill:   rgba(130, 156, 175, 0.70);
+  stroke: rgba(130, 156, 175, 0.50);
+  stroke-width: 1.5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
 rect {
   fill:   var(--key-bg);
   stroke: var(--key-fg);
   stroke-width: .5px;
-  /* opacity: 0.7; */
 }
 
-rect.specialKey,
-rect.colorSpc,
-.col6 rect { fill: var(--key-special); }
-text       { fill: var(--key-label); }
-use.level0,
-use.level2 { stroke: var(--key-label); }
+text { fill: var(--key-label); }
 
-/* Modifier keys */
-rect.borderMod,
-use.layerMod { stroke: var(--key-label); }
-text.colorMod  { fill: var(--key-label); }
-rect.colorMod  { fill: var(--key-special); }
+.specialKey use { stroke: var(--special-label); }
+.specialKey text  { fill: var(--special-label); }
+.specialKey rect  { fill: var(--special-bg); }
 
-/* Symbol layer */
-rect.borderSym,
-use.layerSym { stroke: var(--layer-sym-fg); }
-text.borderSym,
-text.layerSym  { fill: var(--layer-sym-fg); }
-text.colorSym  { fill: var(--shift-sym-fg); }
-rect.colorSym  { fill: var(--shift-sym-bg); }
+text.colorNav,
+text.layerNav  { fill: var(--key-nav); }
+use.layerNav { stroke: var(--key-nav); }
 
-/* Navigation layers (NavNum, VimNav) */
-rect.borderNav,
-use.layerNav { stroke: var(--layer-nav-fg); }
-text.borderNav,
-text.layerNav  { fill: var(--layer-nav-fg); }
-text.colorNav  { fill: var(--shift-nav-fg); }
-rect.colorNav  { fill: var(--shift-nav-bg); }
-
-@media (prefers-color-scheme: dark) {
-  .specialKey text.layerSym  { fill: #00f; }
-  .specialKey use.layerSym { stroke: #00f; }
-}
+.specialKey text.colorNav,
+.specialKey text.layerNav  { fill: var(--special-nav); }
+.specialKey use.layerNav { stroke: var(--special-nav); }
