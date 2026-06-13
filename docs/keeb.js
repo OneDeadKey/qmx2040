@@ -203,4 +203,19 @@ const setKeebLayout = (layout) => {
   }
   // selector.value = layout;
 };
-setKeebLayout('us');
+
+// select layout
+if (document.location.hash.startsWith("#/")) {
+  const layout = document.location.hash.substr(2);
+  document.querySelector("select").value = layout;
+  document.location.hash = "#proudly-asymmetric";
+  setKeebLayout(layout);
+}
+else {
+  setKeebLayout('us');
+}
+
+// anchors
+document.querySelectorAll("h2[id], h3[id]").forEach((heading) => {
+  heading.innerHTML = `${heading.innerHTML} <a href="#${heading.id}">#</a>`;
+});

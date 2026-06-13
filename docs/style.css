@@ -85,7 +85,15 @@ a[href] {
   color: var(--fg-accent);
   text-decoration: none;
 }
-
 a[href]:hover {
   text-decoration: underline;
+}
+
+h2 a,
+h3 a {
+  display: none;
+}
+h2:hover a,
+h3:hover a {
+  display: inline;
 }
