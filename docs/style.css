@@ -65,11 +65,13 @@ h2 {
 form {
   text-align: right;
 }
-h2+form {
+h2+iframe {
   margin-top: -1em;
 }
-svg {
+iframe {
   width: 100%;
+  border: none;
+  aspect-ratio: 2/1;
 }
 img {
   display: block;

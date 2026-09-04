@@ -241,8 +241,3 @@ setGeometry("qmx");
 setOptions();
 drawKeys();
 drawLabels();
-
-// anchors
-document.querySelectorAll("h2[id], h3[id]").forEach((heading) => {
-  heading.innerHTML = `${heading.innerHTML} <a href="#${heading.id}">#</a>`;
-});
