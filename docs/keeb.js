@@ -9,9 +9,9 @@ const keyboards = {
     rows: [ "num", "top", "home", "bottom" ],
     col_stagger: [ 0, 0, 0.5, 0, 0, 0, 0, 0.5],
     col_splay:   [ 0, 0, 0, 0, 0, 0, 0, 0 ],
-    thumb_stagger: [ -1, 0, 0, 0, 0 ],
+    thumb_stagger: [ -1.45, 0, 0, 0, 0 ],
     thumb_spread:  [ -2.3, 0.05, 0, 0, 0 ],
-    thumb_splay:   [ 0, 0,  15, 15, 15 ],
+    thumb_splay:   [ -15, 15, 15, 15, 15 ],
     view_box: "45 -45 940 400",
   },
 };
