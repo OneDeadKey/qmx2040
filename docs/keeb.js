@@ -219,14 +219,21 @@ else {
 
 const checkboxes = document.forms[0];
 const setOptions = (event) => {
-  ["tt", "hrm", "mac"].forEach(id => {
-    if (checkboxes[id].checked) {
-      document.querySelector("svg").classList.add(id);
-    } else {
-      document.querySelector("svg").classList.remove(id);
-    }
-  });
-  setFlavor(checkboxes.tt.checked ? "tt" : "ez");
+  if (checkboxes.hrm.checked) {
+    document.querySelector("svg").classList.add("hrm");
+  } else {
+    document.querySelector("svg").classList.remove("hrm");
+  }
+  let os = "";
+  if (checkboxes.mac.checked) {
+    document.querySelector("svg").classList.add("macos");
+    document.querySelector("svg").classList.remove("linux");
+    os = "-mac"
+  } else {
+    document.querySelector("svg").classList.add("linux");
+    document.querySelector("svg").classList.remove("macos");
+  }
+  setFlavor((checkboxes.tt.checked ? "tt" : "ez") + os);
 };
 checkboxes.onchange = setOptions;
 

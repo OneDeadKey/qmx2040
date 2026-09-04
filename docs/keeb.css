@@ -42,6 +42,10 @@
 text.sticky {
   transform: rotate(-90deg);
 }
+use.sticky,
+.mac.sticky {
+  transform: translateX(-14px);
+}
 
 
 /*****************************************************************************
@@ -54,10 +58,7 @@ text {
   text-align: center;
   text-anchor: middle;
 }
-.specialKey text {
-  font-size: 14px;
-}
-text.pc {
+text.lin, text.pc {
   font-size: 14px;
 }
 text.shortcut {
@@ -76,10 +77,10 @@ use.layerVim {
   fill: none;
 }
 
-.hrmKey, .dual .mac, .dual .pc {
+.hrmKey, .lin, .mac {
   display: none;
 }
-.hrm .hrmKey, .hrm .dual .pc {
+.hrm .hrmKey, .linux .lin, .macos .mac {
   display: block;
 }
 
