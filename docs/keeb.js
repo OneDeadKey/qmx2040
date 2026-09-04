@@ -80,7 +80,7 @@ function setGeometry(name) {
   });
 }
 
-function setFlavor(flavor, vim) {
+function setFlavor(flavor) {
   document.querySelector("#left").setAttribute("class", flavor);
   document.querySelector("#right").setAttribute("class", flavor);
   ["left", "right"].forEach(id => {
@@ -110,9 +110,6 @@ const drawKeys = () => {
     rect.setAttribute("y", padding + ikh / 2);
     rect.setAttribute("width",  ikw / 2);
     rect.setAttribute("height", ikh / 2);
-  });
-  document.querySelectorAll(".specialKey rect.holdTap").forEach(rect => {
-    rect.setAttribute("width", ikw);
   });
 };
 
@@ -146,9 +143,6 @@ const drawLabels = () => {
   document.querySelectorAll(".layerNav, .layerVim, .layerFun",).forEach(text => {
     text.setAttribute("x", x2);
     text.setAttribute("y", y1);
-  });
-  document.querySelectorAll(".specialKey .level1, .specialKey .level2").forEach(text => {
-    text.setAttribute("x", x0);
   });
   document.querySelectorAll("text.sticky").forEach(text => {
     text.setAttribute("x", -kh / 2);
@@ -187,11 +181,6 @@ function setLayout(keymap) {
   }
 }
 
-setGeometry("qmx");
-setFlavor("ez");
-drawKeys();
-drawLabels();
-
 // keyboard layout
 const setKeebLayout = (layout) => {
   if (layout) {
@@ -214,6 +203,37 @@ if (document.location.hash.startsWith("#/")) {
 else {
   setKeebLayout('us');
 }
+
+// select layout
+if (document.location.hash.startsWith("#/")) {
+  const layout = document.location.hash.substr(2);
+  document.querySelector("select").value = layout;
+  if (document.getElementById("#proudly-asymmetric")) {
+    document.location.hash = "#proudly-asymmetric";
+  }
+  setKeebLayout(layout);
+}
+else {
+  setKeebLayout('us');
+}
+
+const checkboxes = document.forms[0];
+const setOptions = (event) => {
+  ["tt", "hrm", "mac"].forEach(id => {
+    if (checkboxes[id].checked) {
+      document.querySelector("svg").classList.add(id);
+    } else {
+      document.querySelector("svg").classList.remove(id);
+    }
+  });
+  setFlavor(checkboxes.tt.checked ? "tt" : "ez");
+};
+checkboxes.onchange = setOptions;
+
+setGeometry("qmx");
+setOptions();
+drawKeys();
+drawLabels();
 
 // anchors
 document.querySelectorAll("h2[id], h3[id]").forEach((heading) => {

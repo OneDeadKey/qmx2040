@@ -76,8 +76,12 @@ use.layerVim {
   fill: none;
 }
 
-.tt .holdTap, .tt .borderMod,
-.ez .holdTap, .ez .borderMod { display: none; }
+.hrmKey, .dual .mac, .dual .pc {
+  display: none;
+}
+.hrm .hrmKey, .hrm .dual .pc {
+  display: block;
+}
 
 
 /*****************************************************************************
@@ -91,8 +95,17 @@ use.layerVim {
   --key-label: #444;
 
   --special-bg: #333;
+  --special-mod: #555;
   --special-nav: rgb(243, 156, 84);
   --special-label: #fff;
+
+  --layer-mod-fg: #fff;
+  --shift-mod-fg: #fff;
+  --shift-mod-bg: #555;
+
+  --layer-nav-fg: #e94;
+  --shift-nav-fg: #832;
+  --shift-nav-bg: #a75;
 }
 
 #board use,
@@ -116,10 +129,19 @@ text { fill: var(--key-label); }
 .specialKey text  { fill: var(--special-label); }
 .specialKey rect  { fill: var(--special-bg); }
 
-text.colorNav,
+rect.borderNav,
+use.layerNav { stroke: var(--layer-nav-fg); }
+text.borderNav,
+text.layerNav  { fill: var(--layer-nav-fg); }
+text.colorNav  { fill: var(--shift-nav-fg); }
+rect.colorNav  { fill: var(--shift-nav-bg); }
+
 text.layerNav  { fill: var(--key-nav); }
 use.layerNav { stroke: var(--key-nav); }
 
-.specialKey text.colorNav,
 .specialKey text.layerNav  { fill: var(--special-nav); }
 .specialKey use.layerNav { stroke: var(--special-nav); }
+
+rect.borderMod { stroke: var(--key-label); }
+rect.colorMod  { fill: var(--shift-mod-bg); }
+text.colorMod  { fill: var(--shift-mod-fg); }
