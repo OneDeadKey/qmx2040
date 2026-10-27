@@ -84,7 +84,7 @@
     <section>
       <h2 id="splittable">Splittable</h2>
       <img src="pics/qmx2040_nyan_quack.webp">
-      <p> The QMx2040 has two TRRS connectors and its PCB is pre-cut in the middle, so you can
+      <p> The QMx 2040 has two TRRS connectors and its PCB is pre-cut in the middle, so you can
         easily split it: </p>
       <ul>
         <li> either to use it as a standard split keyboard, to get an extra bit of comfort; </li>
@@ -111,6 +111,24 @@
       <p> We believe the QMx 2040 is the easiest and most versatile ergonomic keybord out there; for
         more advanced ergonomics, take a look at <a href="https://onedeadkey.github.io/quacken">the
         Quacken</a>. </p>
+    </section>
+
+    <section>
+      <h2 id="powered-by-zmk">Powered by ZMK</h2>
+      <p> The QMx 2040 is powered by an <a
+        href="https://github.com/Nuclear-Squid/zmk-keyboard-qmx2040">open-source firmware</a> that
+        is actively maintained. It can be updated easily:
+      <ol>
+        <li> download the latest firmware: <a href="qmx2040.uf2">qmx2040.uf2</a>  </li>
+        <li> make sure the keyboard is connected to your computer </li>
+        <li> press the reset button (next to the DIP switches) for a second <br>
+          — your keyboard is now in bootloader mode, and should appear as an <code>RPI-RP2</code>
+          drive in your file browser </li>
+        <li> drop the <code>qmx2040.uf2</code> file onto this removable drive </li>
+        <li> your keyboard is now updated and ready to use</li>
+      </ol>
+      <p> Bug reports and feature requests can be sent to the dedicated <a
+        href="https://github.com/Nuclear-Squid/zmk-keyboard-qmx2040/issues">bug tracker</a>. </p>
     </section>
 
     <footer>
