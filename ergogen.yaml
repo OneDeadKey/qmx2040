@@ -38,15 +38,20 @@ points:
         padding: kh
         spread:  kw
         origin: [-0.5kw, -0.5kh]
+        splay: -15
       anchor:
-        ref: matrix_ring_bottom
-        shift: [-0.19kw, -1kh]
+        - ref: matrix_middle_bottom
+          shift: [-0.2kw, -1kh]
+        - shift: [-0.5kw, -0.5kh]
+        - rotate: 15
+        - shift: [-0.5kw, 0.5kh]
+
       columns:
-        trans_fem.key:
-        squeezed.key.spread: 1.05kw
-        tucky.key.splay: -15
-        comfy.key.splay: -15
-        reachy.key.splay: -15
+        quenotte.key.splay: 0
+        squeezed:
+        tucky:
+        comfy:
+        reachy:
 
   mirror:
     ref: matrix_tmx_top
